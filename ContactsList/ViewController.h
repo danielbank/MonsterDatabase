@@ -11,6 +11,8 @@
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *monsterName;
+@property (weak, nonatomic) IBOutlet UITextField *monsterType;
+@property (weak, nonatomic) IBOutlet UITextField *monsterScariness;
 @property (weak, nonatomic) IBOutlet UILabel *status;
 
 - (IBAction)saveMonster:(id)sender;

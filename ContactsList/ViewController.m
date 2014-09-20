@@ -38,7 +38,7 @@
         if (sqlite3_open(dbpath, &_monsterDB) == SQLITE_OK)
         {
             char *errMsg;
-            const char *sql_stmt = "CREATE TABLE IF NOT EXISTS MONSTERS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT)";
+            const char *sql_stmt = "CREATE TABLE IF NOT EXISTS MONSTERS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, TYPE TEXT, SCARINESS TEXT)";
             
             if(sqlite3_exec(_monsterDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             {
@@ -49,7 +49,6 @@
             _status.text = @"Failed to open/create database";
         }
     }
-    _status.text = _databasePath;
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +63,7 @@
     
     if(sqlite3_open(dbpath, &_monsterDB) == SQLITE_OK)
     {
-        NSString *insertSQL = [NSString stringWithFormat: @"INSERT INTO MONSTERS (name) VALUES (\"%@\")", _monsterName.text];
+        NSString *insertSQL = [NSString stringWithFormat: @"INSERT INTO MONSTERS (name, type, scariness) VALUES (\"%@\", \"%@\", \"%@\")", _monsterName.text, _monsterType.text, _monsterScariness.text];
         
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(_monsterDB, insert_stmt, -1, &statement, NULL);
@@ -72,6 +71,8 @@
         {
             _status.text = @"Monster added";
             _monsterName.text = @"";
+            _monsterType.text = @"";
+            _monsterScariness.text = @"";
         } else {
             _status.text = @"Failed to add monster";
         }
@@ -87,7 +88,7 @@
     
     if(sqlite3_open(dbpath, &_monsterDB) == SQLITE_OK)
     {
-        NSString *querySQL = [NSString stringWithFormat:@"SELECT name FROM MONSTERS WHERE name=\"%@\"", _monsterName.text];
+        NSString *querySQL = [NSString stringWithFormat:@"SELECT type, scariness FROM MONSTERS WHERE name=\"%@\"", _monsterName.text];
         
         const char *query_stmt = [querySQL UTF8String];
         
@@ -96,8 +97,15 @@
             if (sqlite3_step(statement) == SQLITE_ROW)
             {
                 _status.text = @"Match found";
+                NSString *typeField = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 0)];
+                NSString *scarinessField = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 1)];
+                _monsterType.text = typeField;
+                _monsterScariness.text = scarinessField;
+                                            
             } else {
                 _status.text = @"Match not found";
+                _monsterType.text = @"";
+                _monsterScariness.text = @"";
             }
             sqlite3_finalize(statement);
         }

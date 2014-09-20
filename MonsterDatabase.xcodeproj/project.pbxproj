@@ -22,6 +22,7 @@
 		6914825419A9576D00B28436 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6914823319A9576D00B28436 /* UIKit.framework */; };
 		6914825C19A9576D00B28436 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6914825A19A9576D00B28436 /* InfoPlist.strings */; };
 		6914825E19A9576D00B28436 /* ContactsListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914825D19A9576D00B28436 /* ContactsListTests.m */; };
+		691E490219CE35BB00DA5CC2 /* monsterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E490119CE35BB00DA5CC2 /* monsterTableViewController.m */; };
 		6983ACCC19AB00EE006A0544 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6983ACCB19AB00EE006A0544 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		6914825919A9576D00B28436 /* MonsterDatabaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MonsterDatabaseTests-Info.plist"; sourceTree = "<group>"; };
 		6914825B19A9576D00B28436 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6914825D19A9576D00B28436 /* ContactsListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsListTests.m; sourceTree = "<group>"; };
+		691E490019CE35BB00DA5CC2 /* monsterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = monsterTableViewController.h; sourceTree = "<group>"; };
+		691E490119CE35BB00DA5CC2 /* monsterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = monsterTableViewController.m; sourceTree = "<group>"; };
 		6983ACCB19AB00EE006A0544 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -121,6 +124,8 @@
 				6914823E19A9576D00B28436 /* AppDelegate.h */,
 				6914823F19A9576D00B28436 /* AppDelegate.m */,
 				6914824119A9576D00B28436 /* Main_iPhone.storyboard */,
+				691E490019CE35BB00DA5CC2 /* monsterTableViewController.h */,
+				691E490119CE35BB00DA5CC2 /* monsterTableViewController.m */,
 				6914824419A9576D00B28436 /* Main_iPad.storyboard */,
 				6914824719A9576D00B28436 /* ViewController.h */,
 				6914824819A9576D00B28436 /* ViewController.m */,
@@ -259,6 +264,7 @@
 			files = (
 				6914824919A9576D00B28436 /* ViewController.m in Sources */,
 				6914824019A9576D00B28436 /* AppDelegate.m in Sources */,
+				691E490219CE35BB00DA5CC2 /* monsterTableViewController.m in Sources */,
 				6914823C19A9576D00B28436 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
