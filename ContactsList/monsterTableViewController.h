@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 
 @interface monsterTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *monsterNames;
 
+@property (strong, nonatomic) NSString *databasePath;
+@property (nonatomic) sqlite3 *monsterDB;
 @end

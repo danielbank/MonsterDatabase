@@ -23,18 +23,39 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.monsterNames = [[NSMutableArray alloc] init];
-    NSString *monsterOne = @"bla";
-    NSString *monsterTwo = @"asd";
-    NSString *monsterThree = @"zcvx";
-    NSString *monsterFour = @"wqe";
-    NSString *monsterFive = @"ert";
+    NSString *docsDir;
+    NSArray *dirPaths;
     
-    [self.monsterNames addObject:monsterOne];
-    [self.monsterNames addObject:monsterTwo];
-    [self.monsterNames addObject:monsterThree];
-    [self.monsterNames addObject:monsterFour];
-    [self.monsterNames addObject:monsterFive];
+    // Get the documents directory
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    docsDir = dirPaths[0];
+    
+    // Build the path to the database file
+    _databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent:@"monsters.db"]];
+    
+    self.monsterNames = [[NSMutableArray alloc] init];
+    
+    sqlite3_stmt *statement;
+    const char *dbpath = [_databasePath UTF8String];
+    
+    if(sqlite3_open(dbpath, &_monsterDB) == SQLITE_OK)
+    {
+        NSString *querySQL = [NSString stringWithFormat:@"SELECT name FROM MONSTERS"];
+        
+        const char *query_stmt = [querySQL UTF8String];
+        
+        if(sqlite3_prepare_v2(_monsterDB, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                NSString *thisMonsterName = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 0)];
+                [self.monsterNames addObject:thisMonsterName];
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_monsterDB);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +74,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 5;
+    NSString* myNewString = [NSString stringWithFormat:@"%i", self.monsterNames.count];
+    NSLog(myNewString);
+    return self.monsterNames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
