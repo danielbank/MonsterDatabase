@@ -7,6 +7,7 @@
 //
 
 #import "monsterTableViewController.h"
+#import "monsterViewController.h"
 
 @interface monsterTableViewController ()
 
@@ -74,16 +75,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSString* myNewString = [NSString stringWithFormat:@"%i", self.monsterNames.count];
-    NSLog(myNewString);
     return self.monsterNames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"monsterName" forIndexPath:indexPath];
     cell.textLabel.text = [self.monsterNames objectAtIndex:indexPath.row];
-    // Configure the cell...
-    
     return cell;
 }
 
@@ -121,14 +118,25 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([sender isKindOfClass:[NSIndexPath class]]) {
+        if([segue.destinationViewController isKindOfClass:[monsterViewController class]]) {
+            monsterViewController *nextViewController = segue.destinationViewController;
+            NSIndexPath *path = sender;
+            NSString *selectedMonsterName = self.monsterNames[path.row];
+            nextViewController.thisMonster = selectedMonsterName;
+        }
+    }
 }
-*/
+
+#pragma mark - UITableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"pushToMonsterData" sender:indexPath];
+}
 
 @end

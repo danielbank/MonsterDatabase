@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface monsterViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *monsterName;
 @property (weak, nonatomic) IBOutlet UITextField *monsterType;
 @property (weak, nonatomic) IBOutlet UITextField *monsterScariness;
@@ -18,6 +18,7 @@
 - (IBAction)saveMonster:(id)sender;
 - (IBAction)findMonster:(id)sender;
 
+@property (strong, nonatomic) NSString *thisMonster;
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *monsterDB;
 @end

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Annuit. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "monsterViewController.h"
 
-@interface ViewController ()
+@interface monsterViewController ()
 
 @end
 
-@implementation ViewController
+@implementation monsterViewController
 
 - (void)viewDidLoad
 {
@@ -49,6 +49,7 @@
             _status.text = @"Failed to open/create database";
         }
     }
+    [self findMonster:_thisMonster];
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,7 +89,7 @@
     
     if(sqlite3_open(dbpath, &_monsterDB) == SQLITE_OK)
     {
-        NSString *querySQL = [NSString stringWithFormat:@"SELECT type, scariness FROM MONSTERS WHERE name=\"%@\"", _monsterName.text];
+        NSString *querySQL = [NSString stringWithFormat:@"SELECT type, scariness FROM MONSTERS WHERE name=\"%@\"", _thisMonster];
         
         const char *query_stmt = [querySQL UTF8String];
         
@@ -99,6 +100,7 @@
                 _status.text = @"Match found";
                 NSString *typeField = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 0)];
                 NSString *scarinessField = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 1)];
+                _monsterName.text = _thisMonster;
                 _monsterType.text = typeField;
                 _monsterScariness.text = scarinessField;
                                             
