@@ -1,6 +1,6 @@
 //
-//  ContactsListTests.m
-//  ContactsListTests
+//  MonsterDatabaseTests.m
+//  MonsterDatabaseTests
 //
 //  Created by Daniel Bank on 8/23/14.
 //  Copyright (c) 2014 Annuit. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface ContactsListTests : XCTestCase
+@interface MonsterDatabaseTests : XCTestCase
 
 @end
 
-@implementation ContactsListTests
+@implementation MonsterDatabaseTests
 
 - (void)setUp
 {

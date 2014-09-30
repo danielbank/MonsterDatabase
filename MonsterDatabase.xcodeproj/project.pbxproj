@@ -21,7 +21,7 @@
 		6914825319A9576D00B28436 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6914822F19A9576D00B28436 /* Foundation.framework */; };
 		6914825419A9576D00B28436 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6914823319A9576D00B28436 /* UIKit.framework */; };
 		6914825C19A9576D00B28436 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6914825A19A9576D00B28436 /* InfoPlist.strings */; };
-		6914825E19A9576D00B28436 /* ContactsListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914825D19A9576D00B28436 /* ContactsListTests.m */; };
+		6914825E19A9576D00B28436 /* MonsterDatabaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914825D19A9576D00B28436 /* MonsterDatabaseTests.m */; };
 		691E490219CE35BB00DA5CC2 /* monsterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E490119CE35BB00DA5CC2 /* monsterTableViewController.m */; };
 		6983ACCC19AB00EE006A0544 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6983ACCB19AB00EE006A0544 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
@@ -32,7 +32,7 @@
 			containerPortal = 6914822419A9576D00B28436 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6914822B19A9576D00B28436;
-			remoteInfo = ContactsList;
+			remoteInfo = MonsterDatabase;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -56,7 +56,7 @@
 		6914825119A9576D00B28436 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6914825919A9576D00B28436 /* MonsterDatabaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MonsterDatabaseTests-Info.plist"; sourceTree = "<group>"; };
 		6914825B19A9576D00B28436 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6914825D19A9576D00B28436 /* ContactsListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsListTests.m; sourceTree = "<group>"; };
+		6914825D19A9576D00B28436 /* MonsterDatabaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonsterDatabaseTests.m; sourceTree = "<group>"; };
 		691E490019CE35BB00DA5CC2 /* monsterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = monsterTableViewController.h; sourceTree = "<group>"; };
 		691E490119CE35BB00DA5CC2 /* monsterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = monsterTableViewController.m; sourceTree = "<group>"; };
 		6983ACCB19AB00EE006A0544 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -90,8 +90,8 @@
 		6914822319A9576D00B28436 = {
 			isa = PBXGroup;
 			children = (
-				6914823519A9576D00B28436 /* ContactsList */,
-				6914825719A9576D00B28436 /* ContactsListTests */,
+				6914823519A9576D00B28436 /* MonsterDatabase */,
+				6914825719A9576D00B28436 /* MonsterDatabaseTests */,
 				6914822E19A9576D00B28436 /* Frameworks */,
 				6914822D19A9576D00B28436 /* Products */,
 			);
@@ -118,7 +118,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6914823519A9576D00B28436 /* ContactsList */ = {
+		6914823519A9576D00B28436 /* MonsterDatabase */ = {
 			isa = PBXGroup;
 			children = (
 				6914823E19A9576D00B28436 /* AppDelegate.h */,
@@ -132,7 +132,7 @@
 				6914824A19A9576D00B28436 /* Images.xcassets */,
 				6914823619A9576D00B28436 /* Supporting Files */,
 			);
-			path = ContactsList;
+			path = MonsterDatabase;
 			sourceTree = "<group>";
 		};
 		6914823619A9576D00B28436 /* Supporting Files */ = {
@@ -146,13 +146,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6914825719A9576D00B28436 /* ContactsListTests */ = {
+		6914825719A9576D00B28436 /* MonsterDatabaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				6914825D19A9576D00B28436 /* ContactsListTests.m */,
+				6914825D19A9576D00B28436 /* MonsterDatabaseTests.m */,
 				6914825819A9576D00B28436 /* Supporting Files */,
 			);
-			path = ContactsListTests;
+			path = MonsterDatabaseTests;
 			sourceTree = "<group>";
 		};
 		6914825819A9576D00B28436 /* Supporting Files */ = {
@@ -180,7 +180,7 @@
 			dependencies = (
 			);
 			name = MonsterDatabase;
-			productName = ContactsList;
+			productName = MonsterDatabase;
 			productReference = 6914822C19A9576D00B28436 /* MonsterDatabase.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -198,7 +198,7 @@
 				6914825619A9576D00B28436 /* PBXTargetDependency */,
 			);
 			name = MonsterDatabaseTests;
-			productName = ContactsListTests;
+			productName = MonsterDatabaseTests;
 			productReference = 6914825019A9576D00B28436 /* MonsterDatabaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -273,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6914825E19A9576D00B28436 /* ContactsListTests.m in Sources */,
+				6914825E19A9576D00B28436 /* MonsterDatabaseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +401,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ContactsList/MonsterDatabase-Prefix.pch";
-				INFOPLIST_FILE = "ContactsList/MonsterDatabase-Info.plist";
+				GCC_PREFIX_HEADER = "MonsterDatabase/MonsterDatabase-Prefix.pch";
+				INFOPLIST_FILE = "MonsterDatabase/MonsterDatabase-Info.plist";
 				PRODUCT_NAME = MonsterDatabase;
 				WRAPPER_EXTENSION = app;
 			};
@@ -414,8 +414,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ContactsList/MonsterDatabase-Prefix.pch";
-				INFOPLIST_FILE = "ContactsList/MonsterDatabase-Info.plist";
+				GCC_PREFIX_HEADER = "MonsterDatabase/MonsterDatabase-Prefix.pch";
+				INFOPLIST_FILE = "MonsterDatabase/MonsterDatabase-Info.plist";
 				PRODUCT_NAME = MonsterDatabase;
 				WRAPPER_EXTENSION = app;
 			};
@@ -424,19 +424,19 @@
 		6914826519A9576D00B28436 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ContactsList.app/ContactsList";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MonsterDatabase.app/MonsterDatabase";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ContactsList/ContactsList-Prefix.pch";
+				GCC_PREFIX_HEADER = "MonsterDatabase/MonsterDatabase-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ContactsListTests/MonsterDatabaseTests-Info.plist";
+				INFOPLIST_FILE = "MonsterDatabaseTests/MonsterDatabaseTests-Info.plist";
 				PRODUCT_NAME = MonsterDatabaseTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -446,15 +446,15 @@
 		6914826619A9576D00B28436 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ContactsList.app/ContactsList";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MonsterDatabase.app/MonsterDatabase";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ContactsList/ContactsList-Prefix.pch";
-				INFOPLIST_FILE = "ContactsListTests/MonsterDatabaseTests-Info.plist";
+				GCC_PREFIX_HEADER = "MonsterDatabase/MonsterDatabase-Prefix.pch";
+				INFOPLIST_FILE = "MonsterDatabaseTests/MonsterDatabaseTests-Info.plist";
 				PRODUCT_NAME = MonsterDatabaseTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

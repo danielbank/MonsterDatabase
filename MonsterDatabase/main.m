@@ -1,6 +1,6 @@
 //
 //  main.m
-//  ContactsList
+//  MonsterDatabase
 //
 //  Created by Daniel Bank on 8/23/14.
 //  Copyright (c) 2014 Annuit. All rights reserved.
